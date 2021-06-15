@@ -1,0 +1,314 @@
+/*2020.01.13*/
+
+.operation-map {
+    margin: 30px auto;
+    width: 100%;
+    padding: 15px 15px 15px 50px;
+    background: #d7f2fb;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 1) inset;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 5px;
+    position: relative;
+}
+.map-image img{
+    height:570px;
+    
+}
+.map-container{
+    width: 550px;
+    padding: 15px;
+    background: #aed9e0;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 1) inset;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 5px;
+    position: relative;
+}
+
+
+.map-container:after, .operation-map:after{
+    display: table;
+    content: '';
+    clear: both;
+}
+
+.map-left{
+    float: left;
+    width: 490px;
+    text-align: center;
+    position: relative;
+}
+.operation-map .map-left {
+    margin-left: 150px;
+}
+
+.map-right{
+    float: right;
+    width: 230px;
+}
+.operation-map .map-right{
+    width: 300px;
+    margin-right: 30px;
+}
+
+.map-country{
+    display: none;
+}
+
+.map-country.active{
+    display: block;
+}
+
+.map-panel{
+    position: relative;
+}
+
+.map-title{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/*station*/
+
+.map-station{
+    position:  relative;
+}
+
+.map-station span{
+    color: #333333;
+    font-size: 1em;
+    text-decoration: none;
+    padding-top: 1px;
+}
+
+.map-station span.active{
+    color: #cc0000;
+}
+
+.map-station span.disabled{
+    color: #000!important;
+	text-decoration:line-through!important;
+}
+
+/* label*/
+
+.map-label{
+    text-align: left;
+    position: absolute;
+    top: 10px;
+    left:-150px;
+}
+
+.map-label{
+    font-size: 1em;
+}
+
+.map-label span{
+    width: 40px;
+    height: 8px;
+    margin: 6px 10px 0 0;
+    display: inline-block;
+}
+
+.map-label span.label-1{ background-color: #888888; }
+.map-label span.label-2{ background-color: #e2cb06; }
+.map-label span.label-3{ background-color: #cc0000; }
+
+
+/*color*/
+
+.map-color{
+    text-align: right;
+    position: absolute;
+    bottom: 10px;
+    left:-150px;
+}
+
+.map-color img{
+    margin-right: 6px;
+    width: 18px;
+    height: auto;
+}
+
+
+/*button */
+
+.map-button{
+    position: absolute;
+    z-index: 5000;
+}
+
+.map-button a{
+    display: block;
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    color: transparent;
+    text-align: right;
+    position: absolute;
+    z-index: 5000;
+}
+
+.map-button a:active,
+.map-button a:focus{
+    outline: 0 !important;
+}
+
+.map-button a:hover:after,
+.map-button a.active:after{
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border: 2px solid #cc0000;
+    background-color: #fcfe01;
+    border-radius: 50%;
+    margin-top: 2px;
+}
+
+.map-button a.disabled,
+.map-button a.disabled:after{
+    color: transparent;
+    cursor: default;
+    background-color: transparent;
+    border: 0;
+}
+
+.map-button a.disabled:after{
+    content: '';
+}
+
+/*selector */
+
+.map-selector{
+    text-align: left;
+    z-index: 1000;
+}
+
+a.county{
+    position: absolute;
+    color: #fff;
+    font-size: 0.5em;
+    line-height: 10px;
+    padding: 1px 1px 1px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 3px;
+}
+
+a.county.lock{
+    background-color: #a00;
+}
+
+a.county.active,
+a.county:hover,
+a.county:focus{
+    color: #fff;
+    background-color: #fcba04;
+    outline: none !important;
+}
+
+
+/*基隆*/
+.local-1{
+    left: 334px;
+    top: 60px;
+}
+
+/*新北市*/
+.local-2{
+    left: 282px;
+    top: 116px;
+}
+
+
+
+/*台北市*/
+.local-4{
+    left: 290px;
+    top: 76px;
+}
+
+/*桃園*/
+.local-5{
+    left: 248px;
+    top: 97px;
+}
+
+
+
+/*新竹*/
+.local-7{
+    left: 245px;
+    top: 140px;
+}
+
+/*苗栗*/
+.local-8{
+    left: 215px;
+    top: 168px;
+}
+
+/*台中*/
+.local-9{
+    left: 212px;
+    top: 202px;
+}
+
+/*彰化*/
+.local-10{
+    left: 148px;
+    top: 237px;
+}
+
+/*(南投) 集集線*/
+.local-11{
+    left: 224px;
+    top: 250px;
+}
+
+/*雲林*/
+.local-12{
+    left: 135px;
+    top: 278px;
+}
+
+/*嘉義*/
+.local-13{
+    left: 168px;
+    top: 304px;
+}
+
+/*臺南(含沙崙線)*/
+.local-14{
+    left: 148px;
+    top: 349px;
+}
+
+/*高雄*/
+.local-15{
+    left: 182px;
+    top: 373px;
+}
+
+/*屏東*/
+.local-16{
+    left: 196px;
+    top: 420px;
+}
+
+/*台東*/
+.local-17{
+    left: 242px;
+    top: 374px;
+}
+
+/*花蓮*/
+.local-18{
+    left: 290px;
+    top: 225px;
+}
+
+/*宜蘭*/
+.local-19{
+    left: 329px;
+    top: 123px;
+}
