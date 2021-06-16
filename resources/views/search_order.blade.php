@@ -144,7 +144,7 @@
                 
                 <div class="column middle2">
                     <div class="w3-container w3-red">
-                        <h2><i class="fa fa-sign-in w3-margin-right" aria-hidden="true"></i>Information(先登入會員才可取消訂單)</h2>
+                        <h2><i class="fa fa-sign-in w3-margin-right" aria-hidden="true"></i>Information(登入會員才可取消及修改)</h2>
                     </div>
                     <div class="w3-container3 w3-white w3-padding-16" style="overflow-y:scroll;overflow-x:hidden">
                         <form class="needs-validation" novalidate>
