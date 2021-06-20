@@ -13,6 +13,7 @@
         </style>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style2.css') }}"> 
+        <link rel="stylesheet" href="{{ asset('css/style3.css') }}">
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <!-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"> -->
@@ -28,44 +29,15 @@
         <header>
             <a href="/restaurant/public/index"><button class="book-h"><div class="word">Booking Restaurant</div></button></a>
             <div class="link">
-                @if(session('account'))
-                    <span class="badge badge-secondary">
-                        <i class="fa fa-id-badge" aria-hidden="true"></i>
-                        @foreach (session('name') as $name)
-                            歡迎{{$name->name}}會員
-                        @endforeach
-                    </span>
-                    <a href="/restaurant/public/index/logout"><button type="button" class="btn btn-dark beyond2">
-                        <i class="fa fa-user-circle"></i>會員登出
-                    </button></a>
-                @else
-                    <button type="button" class="btn btn-secondary ">
-                        <i class="fa fa-sign-in" aria-hidden="true"></i><a href="/restaurant/public/index/register" style="color:#fff;text-decoration:none">註冊</a>
-                    </button>
-                    <button type="button" class="btn btn-dark beyond2" data-toggle="modal" data-target="#myModal">
-                        <i class="fa fa-user-circle"></i>會員登入
-                    </button>
-                @endif            
+                <button type="button" class="btn btn-info ">
+                    <i class="fa fa-home" aria-hidden="true"></i><a href="/restaurant/public/index" style="color:#fff;text-decoration:none">回首頁</a>
+                </button>          
                 <a href="https://www.google.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Google" style="color:#fff"><i class="fa fa-google beyond" aria-hidden="true"></i></a>
                 <a href="https://www.facebook.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Facebook" style="color:#fff"><i class="fa fa-facebook beyond" aria-hidden="true"></i></a>
                 <a href="https://www.instagram.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Instagram" style="color:#fff"><i class="fa fa-instagram beyond" aria-hidden="true"></i></a>
                 <a href="https://www.linkedin.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Linkedin" style="color:#fff"><i class="fa fa-linkedin beyond" aria-hidden="true"></i></a>
                 <a href="https://www.twitter.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Twitter" style="color:#fff"><i class="fa fa-twitter beyond" aria-hidden="true"></i></a>
                 <a href="https://www.youtube.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Youtube" style="color:#fff"><i class="fa fa-youtube beyond3" aria-hidden="true"></i></a>
-                <!-- <a href="https://www.pinterest.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest beyond" aria-hidden="true"></i></a> -->
-                <!-- <button class="navbar-toggler burger" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button> -->
-                <!-- <label for="burger" id="touch">☰</label>
-                <input type="checkbox" id="burger">
-                <ul id="show" class="list-group">
-                    <li class="list-group-item"><a href="/restaurant/public/index" style="text-decoration:none">首頁</a></li>
-                    @if(session('account'))
-                    <li class="list-group-item"><a href="##" style="text-decoration:none" data-toggle="modal" data-target="#myModal2">留言專區</a></li>
-                    @endif
-                    <li class="list-group-item"><a href="/restaurant/public/manage" style="text-decoration:none">進入後台</a></li>
-                    <li class="list-group-item"><a href="##" style="text-decoration:none">聯絡我們</a></li>
-                </ul> -->
                 <div class="dropdown beyond5">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                         ☰選單
@@ -73,90 +45,14 @@
                     <div class="dropdown-menu">
                         <ul class="list-group">
                             <li class="list-group-item"><a href="/restaurant/public/index" style="text-decoration:none;font-weight:bold">首頁</a></li>
-                            @if(session('account'))
-                            <li class="list-group-item"><a href="##" style="text-decoration:none;font-weight:bold" data-toggle="modal" data-target="#myModal2">留言專區</a></li>
-                            @endif
-                            <li class="list-group-item"><a href="/restaurant/public/manage" style="text-decoration:none;font-weight:bold">進入後台</a></li>
+                            <li class="list-group-item"><a href="/restaurant/public/index/search" style="text-decoration:none;font-weight:bold">訂單查詢</a></li>
                             <li class="list-group-item"><a href="##" style="text-decoration:none;font-weight:bold">聯絡我們</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </header>
-        <div class="modal" id="myModal" style="z-index:9999">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">會員登錄中心</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <form action="/restaurant/public/index/login" method="post">
-                            <div class="form-group">
-                                <label for="account">帳號:</label>
-                                <input type="text" class="form-control" id="acc" placeholder="Enter account" name="account">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">密碼:</label>
-                                <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
-                            </div>
-                            <div class="form-group">
-                                <label for="check">驗證碼:</label>
-                                <input type="text" class="form-control" id="check2" placeholder="Enter verifycode" name="check"><br>
-                                <img src="/restaurant/public/index/verifycode" id="rand-img" class="rand-img">
-                                <a href="" id="reload-img"><input type="button" value="重新產生" class="btn btn-info"></a>
-                            </div><br>
-                            <button type="submit" class="btn btn-success" style="margin-left:16%">Login</button>
-                            <button type="reset" class="btn btn-warning" style="margin-left:20px">Reset</button>
-                            <button class="btn btn-danger" style="margin-left:20px">
-                                <i class="fa fa-question" style="margin-right:8px;"></i><a href="/restaurant/public/index/forgetpwd" style="color:yellow;text-decoration:none">Forget Password</a>
-                            </button>
-
-                            {!! csrf_field() !!}
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @if(session('account'))
-        <div class="modal" id="myModal2" style="z-index:9999">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h4 class="modal-title">留言專區</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    
-                    <div class="modal-body" id="slide">
-                        @foreach($DATA2 as $data2)
-                            <div class="media border p-3">
-                                <div class="media-body">
-                                    <h4>留言者:{{$data2->name}} <small><i> 時間:{{$data2->date}}</i></small></h4>
-                                    <p>{{$data2->texting}}</p>      
-                                </div>
-                            </div><br>
-                        @endforeach
-                    </div>
-                    <form class="was-validated" action="/restaurant/public/index/comment" method="post">
-                        <div class="form-group" style="width:93%;">
-                            <label for="comment" style="margin-left:20px"> Type Your Comment:</label>
-                            <textarea class="form-control" rows="5" id="comment" name="chat" style="margin-left:17px;" required></textarea>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        <input type="submit" class="btn btn-success" id="send" style="margin-left:45%" value="Post">
-                        {!! csrf_field() !!}
-                    </form>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        @endif
+        
         <img src="{{asset('img/food.jpg')}}" class="img">
         <div class="w3-display-middle2" style="width:85%">
             <div class="row">
@@ -167,56 +63,34 @@
                 
                 <div class="column middle3">
                     <div class="w3-container w3-red">
-                        <h2><i class="fa fa-sign-in w3-margin-right" aria-hidden="true"></i>Search for order ID</h2>
+                        <h2><i class="fa fa-sign-in w3-margin-right" aria-hidden="true"></i>Go to backend</h2>
                     </div>
-                    <div class="w3-container4 w3-white w3-padding-16">
-                        <form method="post" action="/restaurant/public/index/search2" class="needs-validation" novalidate>
+                    <div class="w3-container5 w3-white w3-padding-16">
+                        <form method="post" action="/restaurant/public/index/updatepwd" class="needs-validation" novalidate>
                             <div class="row">
                                 <div class="form-group">
-                                    <label for="phone" class="la5"><i class="fa fa-phone" aria-hidden="true" style="margin-right:10px;"></i>手機號碼</label><br>
-                                    <input type="tel" id="phone2" name="phone">
+                                    <label for="phone" class="la5"><i class="fa fa-address-card-o" aria-hidden="true" style="margin-right:10px;"></i>帳號</label><br>
+                                    <input type="text" id="account2" name="account" required>
+                                    <div class="valid-feedback la4">Valid.</div>
+                                    <div class="invalid-feedback la4">Please fill out this field.</div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="orderid" class="la5"><i class="fa fa-id-card" aria-hidden="true" style="margin-right:10px;"></i>訂單編號</label><br>
-                                    <input type="text" id="orderid" name="orderid">
+                                    <label for="orderid" class="la5"><i class="fa fa-key" aria-hidden="true" style="margin-right:10px;"></i>新密碼</label><br>
+                                    <input type="password" id="pwd2" name="pwd" required>
+                                    <div class="valid-feedback la4">Valid.</div>
+                                    <div class="invalid-feedback la4">Please fill out this field.</div>
                                 </div>
-                                <button type="submit" class="btn btn-primary" id="submit3">查詢</button>
+                                <div class="form-group">
+                                    <label for="orderid" class="la5"><i class="fa fa-key" aria-hidden="true" style="margin-right:10px;"></i>確認新密碼</label><br>
+                                    <input type="password" id="pwd3" name="checkpwd" required>
+                                    <div class="valid-feedback la4">Valid.</div>
+                                    <div class="invalid-feedback la4">Please fill out this field.</div>
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="submit3" style="margin-top:20px">更換密碼</button>
                             </div>
                             {!! csrf_field() !!}
                         </form>
                     </div>
-                   
-                    
-                    
-                    <!-- <div class="calendar" id="calendar">
-                        <div class="month" id="month">
-                            <ul>
-                                <li><h5><a href="" id="prev" style="text-decoration:none;">&#10094;</a></h5></li>
-                                <li><h5><a href="" id="next" style="text-decoration:none;">&#10095;</a></h5></li>
-                                <li>
-                                    <h1 class="green" id="calendar-title">Month</h1>
-                                    <span style="font-size:18px"><h2 id="calendar-year" class="green">Year</h2></span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body" id="body">
-                            <div class="lightgrey body-list">
-                                <ul>
-                                    <li id="one">MON</li>
-                                    <li id="two">TUE</li>
-                                    <li id="three">WED</li>
-                                    <li id="four">THU</li>
-                                    <li id="five">FRI</li>
-                                    <li id="six">SAT</li>
-                                    <li id="seven">SUN</li>
-                                </ul>
-                            </div>
-                            <div class="darkgrey body-list">
-                                <ul id="days">
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -324,124 +198,37 @@
             <!-- Copyright -->
         </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="{{asset('js/jquery/jquery-3.5.1.min.js')}}"></script>
+        <script src="{{ asset('js/jquery/jquery-3.5.1.min.js')}}"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="{{ asset('js/code_reflesh.js') }}"></script>
         <!-- <script src="{{ asset('js/bootstrap.min.js') }}"></script> -->
         <script src="{{asset('js/calender.js')}}"></script>
         <script src="{{asset('js/sweetalert2.min.js')}}"></script> 
-        @if(session('val'))
+        @if(session('message')=='failchange')
             <script>
-                // alert('驗證碼錯誤');
                 Swal.fire(
-                    '驗證碼錯誤',
-                    'Please type the correct verification code',
+                    'Fail',
+                    'Fail to change your password',
                     'error'
                 )
             </script>
-        @elseif(session('value'))
-            @if(session('value2'))
-                <script>
-                    // alert('帳號或密碼不得為空');
-                    Swal.fire(
-                        '帳號或密碼不得為空',
-                        'Account or the password should not be empty',
-                        'error'
-                    )
-                </script>
-            @else
-                <script>
-                    // alert('帳號或密碼錯誤');
-                    Swal.fire(
-                        '帳號或密碼錯誤',
-                        'The wrong account or the password',
-                        'error'
-                    )
-                </script>
-            @endif
-        @endif
-        @if(session('message')=='success')
-            <script>
-                Swal.fire(
-                    'Success',
-                    'You create a new account',
-                    'success'
-                )
-            </script>
-        @elseif(session('message')=='nologin')
-            <script>
-                Swal.fire(
-                    'Login First',
-                    'Please login or register an account',
-                    'error'
-                )
-            </script>
-        @elseif(session('message')=='notsame')
-            <script>
-                Swal.fire(
-                    'Mobile Number',
-                    'The mobile number is not correct',
-                    'error'
-                )
-            </script>
-        @elseif(session('message')=='nothing')
+        @elseif(session('message')=='pwdnotsame')
             <script>
                 Swal.fire(
                     'Error',
-                    'Please enter one of the block',
+                    'The password are not same, please type the right password!',
                     'error'
                 )
             </script>
-        @elseif(session('message')=='popin')
+        @elseif(session('message')=='noaccount')
             <script>
                 Swal.fire(
-                    'Comment Successfully put in',
-                    'Well done',
-                    'success'
-                )
-            </script>
-        @elseif(session('message')=='popfail')
-            <script>
-                Swal.fire(
-                    'Fail to put your comment',
-                    'Try again',
-                    'error'
-                )
-            </script>
-        @elseif(session('message')=='wrongdirect')
-            <script>
-                Swal.fire(
-                    'Direct the wrong way',
-                    'Try again',
-                    'error'
-                )
-            </script>
-        @elseif(session('message')=='tryagain')
-            <script>
-                Swal.fire(
-                    'Can\'t find the order',
-                    'Try again',
+                    'Error',
+                    'This account is not register yet!!!',
                     'error'
                 )
             </script>
         @endif
-        @if(session('wrong')=='Error-oriented')
-            <script>
-                Swal.fire(
-                    'Error-oriented',
-                    'Please try again',
-                    'error'
-                )
-            </script>
-        @endif
-        <!-- <script >
-            Swal.fire(
-                'Good job!',
-                'You clicked the button!',
-                'success'
-            )
-        </script> -->
-         
         <script>
             function getval(obj){
                 $("#date").val(obj.value);

@@ -253,7 +253,7 @@
                 </div>
             </div>
         </header>
-        <div class="modal" id="myModal" style="z-index:9999">
+        <div class="modal" id="myModal" style="z-index:9990">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <!-- Modal Header -->
@@ -278,9 +278,12 @@
                                 <img src="/restaurant/public/index/verifycode" id="rand-img" class="rand-img">
                                 <a href="" id="reload-img"><input type="button" value="重新產生" class="btn btn-info"></a>
                             </div><br>
-                            <button type="submit" class="btn btn-success" style="margin-left:16%">Login</button>
-                            <button type="reset" class="btn btn-warning" style="margin-left:20px">Reset</button>
-                            <button class="btn btn-danger" style="margin-left:20px"><a href="#" style="text-decoration:none; color:yellow">Forget Password</a></button>
+                            <button type="submit" class="btn btn-success" style="margin-left:16%;background:linear-gradient(to right, #90ee90 30%, cyan 70%);color:black;">Login</button>
+                            <button type="reset" class="btn btn-warning" style="margin-left:20px;background:linear-gradient(to right, orange 30%, yellow 80%);">Reset</button>
+                            <button class="btn btn-danger" style="margin-left:20px;background:linear-gradient(to right, Fuchsia 30%, pink 70%);" data-toggle="modal" data-target="#myModal3">
+                                <i class="fa fa-question" style="margin-right:8px;"></i><a href="/restaurant/public/index/forgetpwd" style="color:black;text-decoration:none">Forget Password</a>
+                            </button>
+                            <!-- <button class="btn btn-danger" style="margin-left:20px;background:linear-gradient(to right, pink 20%, Fuchsia 80%);"><a href="/restaurant/public/index/forgetpwd" style="text-decoration:none;">Forget Password</a></button> -->
 
                             {!! csrf_field() !!}
                         </form>
@@ -600,6 +603,14 @@
                     'Fail to put your comment',
                     'Try again',
                     'error'
+                )
+            </script>
+        @elseif(session('message')=='successchange')
+            <script>
+                Swal.fire(
+                    'Success to change your password',
+                    'Great job',
+                    'success'
                 )
             </script>
         @endif

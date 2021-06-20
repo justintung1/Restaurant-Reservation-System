@@ -32,6 +32,23 @@
     outline:medium;
     background-color:rgb(231, 222, 222);
 }
+#pwd3{
+    width: 400px;
+    padding: 4px 22px;
+    margin: 10px 120px;
+    border: none;
+    border-bottom: 2px solid red;
+    background-color:rgb(231, 222, 222);
+}
+#pwd3:focus{
+    width: 400px;
+    padding: 4px 22px;
+    margin: 10px 120px;
+    border: none;
+    border-bottom: 2px solid rgb(87, 7, 54);
+    outline:medium;
+    background-color:rgb(231, 222, 222);
+}
 #check2{
     width: 400px;
     padding: 4px 22px;

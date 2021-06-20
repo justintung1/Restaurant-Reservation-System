@@ -22,6 +22,8 @@ Route::group(['prefix' => 'index'], function(){
     Route::get('/logout','WebController@logout');
     Route::get('/register','WebController@register');
     Route::post('/validating','WebController@validating');
+    Route::get('/forgetpwd','WebController@forgetpwd');
+    Route::post('/updatepwd','WebController@updatepwd');
 
     Route::post('/book','WebController@book');
     Route::get('/book2','WebController@book2');

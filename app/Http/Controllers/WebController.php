@@ -53,6 +53,43 @@ class WebController extends Controller
 		imagepng($my_image);
 		imagedestroy($my_image);
     }
+    public function forgetpwd(){
+        if(session('account')){
+            return redirect('/index')->with('wrong','Error-oriented');
+        }
+        else{
+            return view('forgetpwd');
+        }
+    }
+    public function updatepwd(){
+        $index=request()->all();
+        $collection=collect($index);
+        $ac=$collection->get('account');
+        $pwd=$collection->get('pwd');
+        $checkpwd=$collection->get('checkpwd');
+
+        $dump=DB::select('select * from user where account = ?',[$ac]);
+        if($dump){
+            if($pwd==$checkpwd){
+                foreach($dump as $num){
+                    $kn=$num->kn;
+                }
+                $update=DB::table('user')->where('kn',$kn)->update(['password'=>$pwd]);
+                if($update){
+                    return redirect('/index')->with('message','successchange');
+                }
+                else{
+                    return redirect()->back()->with('message','failchange');
+                }
+            }
+            else{
+                return redirect()->back()->with('message','pwdnotsame');
+            }
+        }
+        else{
+            return redirect()->back()->with('message','noaccount');
+        }
+    }
     public function login(){
         header('Content-type:text/html;charset=utf-8');
         $input = request()->all();
