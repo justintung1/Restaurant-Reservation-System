@@ -32,7 +32,7 @@
     border-right: 1px solid rgb(0, 204, 255);;
   }
   table tbody tr:last-child td:first-child {
-    border-radius: 0 0 0 5px;   
+    border-radius: 0 0 0 5px;
   }
   
   table tbody tr:last-child td:last-child {
