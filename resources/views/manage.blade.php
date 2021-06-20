@@ -52,7 +52,6 @@
                 </div>
             </div>
         </header>
-        
         <img src="{{asset('img/food.jpg')}}" class="img">
         <div class="w3-display-middle2" style="width:85%">
             <div class="row">
