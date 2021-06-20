@@ -113,7 +113,6 @@
                             <button class="btn btn-danger" style="margin-left:20px">
                                 <i class="fa fa-question" style="margin-right:8px;"></i><a href="/restaurant/public/index/forgetpwd" style="color:yellow;text-decoration:none">Forget Password</a>
                             </button>
-
                             {!! csrf_field() !!}
                         </form>
                     </div>
