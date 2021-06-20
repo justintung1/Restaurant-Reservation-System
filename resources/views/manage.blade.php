@@ -38,7 +38,6 @@
                 <a href="https://www.linkedin.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Linkedin" style="color:#fff"><i class="fa fa-linkedin beyond" aria-hidden="true"></i></a>
                 <a href="https://www.twitter.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Twitter" style="color:#fff"><i class="fa fa-twitter beyond" aria-hidden="true"></i></a>
                 <a href="https://www.youtube.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Youtube" style="color:#fff"><i class="fa fa-youtube beyond3" aria-hidden="true"></i></a>
-                
                 <div class="dropdown beyond5">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                         ☰選單
