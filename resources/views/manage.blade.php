@@ -38,20 +38,7 @@
                 <a href="https://www.linkedin.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Linkedin" style="color:#fff"><i class="fa fa-linkedin beyond" aria-hidden="true"></i></a>
                 <a href="https://www.twitter.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Twitter" style="color:#fff"><i class="fa fa-twitter beyond" aria-hidden="true"></i></a>
                 <a href="https://www.youtube.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Youtube" style="color:#fff"><i class="fa fa-youtube beyond3" aria-hidden="true"></i></a>
-                <!-- <a href="https://www.pinterest.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest beyond" aria-hidden="true"></i></a> -->
-                <!-- <button class="navbar-toggler burger" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button> -->
-                <!-- <label for="burger" id="touch">☰</label>
-                <input type="checkbox" id="burger">
-                <ul id="show" class="list-group">
-                    <li class="list-group-item"><a href="/restaurant/public/index" style="text-decoration:none">首頁</a></li>
-                    @if(session('account'))
-                    <li class="list-group-item"><a href="##" style="text-decoration:none" data-toggle="modal" data-target="#myModal2">留言專區</a></li>
-                    @endif
-                    <li class="list-group-item"><a href="/restaurant/public/manage" style="text-decoration:none">進入後台</a></li>
-                    <li class="list-group-item"><a href="##" style="text-decoration:none">聯絡我們</a></li>
-                </ul> -->
+                
                 <div class="dropdown beyond5">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                         ☰選單
